@@ -1,3 +1,7 @@
+.nav {
+	display: inline;
+}
+
 .introduction h1 {
 	color: rgb(255, 50, 0);
 }
