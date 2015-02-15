@@ -1,3 +1,7 @@
-.container {
-	color: red;
+.introduction h1 {
+	color: rgb(255, 50, 0);
+}
+
+.introduction p {
+	color: rgb(255, 10, 0);
 }
