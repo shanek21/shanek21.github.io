@@ -4,6 +4,8 @@
 
 .nav li{
 	display: inline;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
 .introduction h1 {
