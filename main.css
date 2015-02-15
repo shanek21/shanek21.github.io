@@ -1,11 +1,11 @@
 .nav {
-	background-color: rgb(50, 50, 50);
+	background-color: rgb(5, 5, 5);
 }
 
 .nav li{
 	display: inline;
-	padding-left: 50px;
-	padding-right: 50px;
+	padding-left: auto;
+	padding-right: auto;
 }
 
 .introduction h1 {
