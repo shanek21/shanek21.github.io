@@ -17,17 +17,23 @@
 	.nav li{
 		display: inline;
 		font-weight: bold;
-		margin-left: 20px;
-		margin-right: 20px;
+	}
+
+	.nav a:hover, a:active {
+    	background-color: rgb(20, 120, 170);
 	}
 
 	.nav a {
 		font-size: 20px;
 		color: white;
+		padding-top: 40px;
+	    padding-bottom: 40px;
+	    padding-left: 20px;
+	    padding-right: 20px;
+	    text-decoration: none;
 	}
 
 .aboutme{
-	
 }
 
 	.aboutme h1 {
@@ -35,19 +41,16 @@
 		font-weight: bold;
 		color: rgb(0, 100, 150);
 		margin-top: 150px;
-		margin-left: 160px;
 		text-align: center;
 	}
 
 	.aboutme p {
 		font-size: 20px;
 		color: black;
-		text-align: center;
-		width: 550px;
-		margin-left: 200px;
-		margin-top: 20px;
+		text-align: justify;
+		padding-top: 20px;
 	}
 
 	.aboutme img {
-		margin-left: 100px;
+		vertical-align: left;
 	}
