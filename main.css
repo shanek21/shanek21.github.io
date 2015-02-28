@@ -14,7 +14,7 @@
 		float: right;
 	}
 
-	.nav li{
+	.nav li {
 		display: inline;
 	}
 
@@ -26,15 +26,15 @@
 		text-decoration: none;
 		padding-top: 40px;
 	    padding-bottom: 40px;
-	    padding-left: 20px;
-	    padding-right: 20px;
+	    padding-left: 25px;
+	    padding-right: 25px;
 	}
 
 	.nav a:hover, a:active {
     	background-color: rgb(20, 120, 170);
 	}
 
-.aboutme{
+.aboutme {
 }
 
 	.aboutme h1 {
@@ -54,4 +54,24 @@
 
 	.aboutme img {
 		vertical-align: left;
+	}
+
+.workexperience {
+}
+
+	.workexperience h1 {
+		font-size: 60px;
+		font-weight: bold;
+		color: rgb(0, 100, 150);
+		text-align: center;
+	}
+
+	.workexperience h2 {
+		margin-left: 30px;
+	}
+
+	.workexperience p {
+		font-size: 20px;
+		margin-left: 80px;
+		width: 1200px;
 	}
