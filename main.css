@@ -108,8 +108,11 @@
 
 	.otherprojects a {
 		font-size: 30px;
-		margin-top: 50px;
 		margin-left: 30px;
+	}
+
+	.otherprojects {
+		margin-top: 50px;
 	}
 
 .portfolio {
