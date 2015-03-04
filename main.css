@@ -56,6 +56,12 @@
 		vertical-align: left;
 	}
 
+	.inprogress p {
+		text-align: center;
+		font-size: 25px;
+		color: rgb(200, 200, 200);
+	}
+
 .workexperience {
 }
 
