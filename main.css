@@ -65,6 +65,10 @@
 .workexperience {
 }
 
+	.workrow {
+		margin-top: 50px;
+	}
+
 	.workexperience h1 {
 		font-size: 60px;
 		font-weight: bold;
@@ -74,7 +78,6 @@
 
 	.workexperience h2 {
 		margin-left: 30px;
-		margin-top: 50px;
 	}
 
 	.workexperience p {
@@ -82,8 +85,12 @@
 		margin-left: 80px;
 	}
 
+	.Robotics {
+	}
+
 .projects {
 }
+
 	.projects h1 {
 		font-size: 60px;
 		font-weight: bold;
@@ -99,7 +106,6 @@
 	.projects p {
 		font-size: 20px;
 		margin-left: 50px;
-		width: 1200px;
 	}
 
 	.projects ul {
@@ -108,16 +114,30 @@
 
 	.projects a {
 		font-size: 20px;
-		width: 1200px;
 	}
 
-	.otherprojects a {
-		font-size: 30px;
-		margin-left: 30px;
+	.otherprojectrow {
+		margin-bottom: 50px;
 	}
 
 	.otherprojects {
 		margin-top: 50px;
+		margin-bottom: 50px;
+		background-color: rgb(0, 100, 150);
+	}
+
+	.otherprojects a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 30px;
+		padding-right: 30px;
+		font-size: 30px;
+		background-color: rgb(0, 100, 150);
+		color: rgb(230, 230, 230);
+	}
+
+	.otherprojects a:hover{
+    	background-color: rgb(20, 120, 170);
 	}
 
 .portfolio {
