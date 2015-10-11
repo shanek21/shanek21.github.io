@@ -14,7 +14,7 @@
 
 	<body ng-app="webApp" ng-controller="MainController" style="background-color: black; color: white;">
 
-		<h1>Murder in the Dark</h1>
+	<h1>Murder in the Dark</h1>
   	<input type='text' class='inputName' placeholder='Name' size='30' style='font-size: 25px;'>
   	<select class='inputRole' style='height:30px; font-size:25px'>
 		<option value="Select a Role">Select a Role</option>
@@ -27,10 +27,17 @@
     <br><br><br>
     <input type='button' class='submitBtn' value='Define Role' style='font-size: 25px;'><br><br>
 
-    <h3>Your Current Role: {{selectedRole}}</h3>
-
-	  <p ng-repeat="currentRole in roles" ng-if="knowledge[selectedRole].indexOf(currentRole.role)>=0&&selectedRole!='All Seeing Eye'">{{currentRole['role']}}: {{currentRole['name']}}</p>
-	  <p ng-repeat="currentRole in roles" ng-if="knowledge[selectedRole].indexOf(currentRole.role)>=0&&selectedRole=='All Seeing Eye'">{{currentRole['role']}}</p>
+    <div class="row">
+    	<div class="col-md-6">
+		    <h3>Your Current Role: {{selectedRole}}</h3>
+			  <p ng-repeat="currentRole in roles" ng-if="knowledge[selectedRole].indexOf(currentRole.role)>=0&&selectedRole!='All Seeing Eye'">{{currentRole['role']}}: {{currentRole['name']}}</p>
+			  <p ng-repeat="currentRole in roles" ng-if="knowledge[selectedRole].indexOf(currentRole.role)>=0&&selectedRole=='All Seeing Eye'">{{currentRole['role']}}</p>
+		 </div>
+		 <div class="col-md-6">
+			 <h3>Current Players ({{roles.length}}):</h3>
+			 <p ng-repeat="currentRole in roles">{{currentRole['name']}}</p>
+		 </div>
+	 </div>
 
 	  <br><br><br><br><br>
 
