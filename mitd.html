@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- AngularJS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+		<!-- Jquery -->
+		<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+		<!-- Firebase -->
+		<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+		<!-- Angular Fire -->
+		<script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
+		<title>MITD</title>
+	</head>
+
+	<body ng-app="webApp" ng-controller="MainController" style="background-color: black; color: white;">
+
+		<h1>Murder in the Dark</h1>
+  	<input type='text' class='inputName' placeholder='Name' size='30' style='font-size: 25px;'>
+  	<select class='inputRole' style='height:30px; font-size:25px'>
+		<option value="Select a Role">Select a Role</option>
+		<option value="Murderer">Murderer</option>
+		<option value="Secondary Murderer">Secondary Murderer</option>
+		<option value="Old Lady">Old Lady</option>
+		<option value="All Seeing Eye">All Seeing Eye</option>
+		<option value="Bomber">Bomber</option>
+	</select>
+    <br><br><br>
+    <input type='button' class='submitBtn' value='Define Role' style='font-size: 25px;'><br><br>
+
+    <h3>Your Current Role: {{selectedRole}}</h3>
+
+	  <p ng-repeat="currentRole in roles" ng-if="knowledge[selectedRole].indexOf(currentRole.role)>=0&&selectedRole!='All Seeing Eye'">{{currentRole['role']}}: {{currentRole['name']}}</p>
+	  <p ng-repeat="currentRole in roles" ng-if="knowledge[selectedRole].indexOf(currentRole.role)>=0&&selectedRole=='All Seeing Eye'">{{currentRole['role']}}</p>
+
+	  <br><br><br><br><br>
+
+	  <input type='button' class='clearBtn' value='CLEAR' style='font-size: 25px;'>
+
+    <script>
+    	var webApp = angular.module('webApp', ['firebase']);
+
+    	webApp.controller('MainController', ['$scope', '$firebaseArray', '$timeout',
+        function($scope, $firebaseArray, $timeout) {
+
+        	var database = new Firebase('https://resplendent-torch-7224.firebaseio.com/mitd');
+
+        	$scope.roles = $firebaseArray(database);
+
+        	$scope.knowledge = {'Murderer': ['Murderer', 'Secondary Murderer'], 'All Seeing Eye': ['Murderer', 'Secondary Murderer', 'Old Lady', 'Bomber', 'All Seeing Eye']};
+
+        	$scope.selectedRole = 'None';
+
+        	// Check if an entry is a duplicate every time an entry is uploaded
+        	database.on('child_added', function(snapshot) {
+	          var newData = snapshot.val();
+	          var newName = newData['name'];
+	          var newRole = newData['role'];
+	          for (item in $scope.roles) {
+	          	if ($scope.roles[item]['name'] == newName) {
+	          		if ($scope.roles[item]['role'] == newRole) {
+	          			$scope.roles.$remove(item-1+1);
+	          		}
+	          	}
+	          }
+	        });
+
+        	// If the database is now empty, then set all roles to None
+	        $scope.resetRole = function() {
+	          if ($scope.roles.length <= 0) {
+	          	$scope.selectedRole = 'None';
+	          }
+	        };
+
+	        // When data is ever deleted, delay and run resetRole
+	        database.on('child_removed', function(oldChildSnapshot) {
+	        	$timeout($scope.resetRole, 500);
+	        });
+
+        	// Upload data when submit button is pressed and reset the selected role
+        	$('.submitBtn').click(function() {
+        		var inputName = $('.inputName').val();
+						var inputRole = $('.inputRole').val();
+						$scope.roles.$add({role: inputRole, name: inputName});
+						$scope.selectedRole = $('.inputRole').val();
+						$('.inputRole').val('Select a Role');
+	        });
+
+        	// Clear all uploaded data when the clear button is pressed
+	        $('.clearBtn').click(function() {
+	          for (item in $scope.roles) {
+        			$scope.roles.$remove(item-1+1);
+	          }
+	          $scope.selectedRole = 'None';
+	        });
+    	}
+    	]);
+		</script>
+	</body>
+</html>
