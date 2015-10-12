@@ -19,9 +19,14 @@
 	<input type='text' class='inputName' placeholder='Name' size='15' style='font-size: 25px;'>
 	<select class='inputRole' style='height:30px; font-size:25px; margin-left: 30px;'>
 		<option value="Select a Role">Select a Role</option>
+		<option value="Civilian">Civilian</option>
 		<option value="Murderer">Murderer</option>
 		<option value="Secondary Murderer">Secondary Murderer</option>
 		<option value="Old Lady">Old Lady</option>
+		<option value="Zombie">Zombie</option>
+		<option value="Doctor">Doctor</option>
+		<option value="Detective">Detective</option>
+		<option value="Lawyer">Lawyer</option>
 		<option value="All Seeing Eye">All Seeing Eye</option>
 		<option value="Bomber">Bomber</option>
 	</select>
@@ -29,10 +34,10 @@
 
   <h3>Your Current Role: {{selectedRole}}</h3>
   <p ng-repeat="currentRole in roles" ng-if="knowledge[selectedRole].indexOf(currentRole.role)>=0&&selectedRole!='All Seeing Eye'&&alive=='yes'">{{currentRole['role']}}: {{currentRole['name']}}</p>
-  <p ng-repeat="currentRole in roles" ng-if="knowledge[selectedRole].indexOf(currentRole.role)>=0&&selectedRole=='All Seeing Eye'&&alive=='yes'">{{currentRole['role']}}</p>
+  <p ng-repeat="currentRole in roles" ng-if="selectedRole=='All Seeing Eye'&&alive=='yes'">{{currentRole['role']}}</p>
   <p ng-repeat="currentRole in roles" ng-if="alive=='no'">{{currentRole['role']}}: {{currentRole['name']}}</p>
 	<h3>Current Players ({{roles.length}}):</h3>
-	<p ng-repeat="currentRole in roles">{{currentRole['name']}}</p>
+	<p ng-repeat="currentRole in roles" ng-if="selectedRole!='All Seeing Eye'">{{currentRole['name']}}</p>
 
 	<br><br><br>
 
@@ -53,7 +58,6 @@
 
         	$scope.selectedRole = 'None';
         	$scope.alive = 'yes';
-        	$scope.$apply();
 
         	// Check if an entry is a duplicate every time an entry is uploaded
         	database.on('child_added', function(snapshot) {
@@ -87,9 +91,11 @@
         	$('.submitBtn').click(function() {
         		var inputName = $('.inputName').val();
 						var inputRole = $('.inputRole').val();
-						$scope.roles.$add({role: inputRole, name: inputName});
-						$scope.selectedRole = $('.inputRole').val();
-						$('.inputRole').val('Select a Role');
+						if (inputRole != 'Select a Role') {
+							$scope.roles.$add({role: inputRole, name: inputName});
+							$scope.selectedRole = $('.inputRole').val();
+							$('.inputRole').val('Select a Role');
+						}
 	        });
 
 	        // Clear all uploaded data when the clear button is pressed
