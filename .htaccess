@@ -1,0 +1,4 @@
+RewriteEngine on 
+RewriteCond %{mitd} !-d 
+RewriteCond %{mitd}\.html -f 
+RewriteRule ^(.*)$ $1.html
