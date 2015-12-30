@@ -1,52 +1,77 @@
 /*
-	Prologue by HTML5 UP
+	Miniport by HTML5 UP
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-/* Section/Article */
+/* Basic */
 
-	section > .last-child, section.last-child, article > .last-child, article.last-child {
-		margin-bottom: 0;
-	}
-
-/* Form */
-
-	form input[type="text"],
-	form input[type="email"],
-	form input[type="password"],
+	form input[type=text],
+	form input[type=password],
 	form select,
 	form textarea {
+		position: relative;
 		-ms-behavior: url("assets/js/ie/PIE.htc");
 	}
-
-/* Button */
 
 	input[type="button"],
 	input[type="submit"],
 	input[type="reset"],
 	button,
 	.button {
+		position: relative;
 		-ms-behavior: url("assets/js/ie/PIE.htc");
 	}
 
-/* Header */
+/* Section/Article */
 
-	#nav ul li a {
-		color: #888;
+	section > .last-child,
+	article > .last-child,
+	section.last-child,
+	article.last-child {
+		margin-bottom: 0;
 	}
 
-		#nav ul li a.active {
-			background: #1C2022;
+/* Box */
+
+	.box {
+		border: solid 1px #ddd;
+	}
+
+/* List */
+
+	ul.social li a {
+		position: relative;
+		top: 0 !important;
+		overflow: hidden;
+		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+		ul.social li a:before {
+			background: none;
 		}
 
-	#headerToggle .toggle {
-		background-color: #888;
+/* Wrappers */
+
+	.wrapper {
+		border-top: solid 1px #ddd;
 	}
 
-/* Main */
+/* Nav */
 
-	#main > section.cover {
-		background-position: auto;
-		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
+	#nav a {
+		position: relative;
+		-ms-behavior: url("assets/js/ie/PIE.htc");
 	}
+
+/* Articles */
+
+	#top .image {
+		position: relative;
+		-ms-behavior: url("assets/js/ie/PIE.htc");
+	}
+
+		#top .image img {
+			position: relative;
+			-ms-behavior: url("assets/js/ie/PIE.htc");
+		}
