@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="testmain.css">
+  	</head>
+	<body>
+		<div class = "nav">
+			<div class = "row">
+				<div class = "col-md-3">
+					<!--White Signature-->
+					<img src="images/sigWhite.png" style="width:304px;height:90px">
+				</div>
+				<div class = "col-md-9">
+					<ul>
+						<li> <a href = "index.html">About me</a> </li>
+						<li> <a href = "workexperience.html">Work Experience</a> </li>
+						<li> <a href = "projects.html">Projects</a> </li>
+						<li> <a href = "portfolio.html">3D Modeling Portfolio</a> </li>
+						<li> <a href = "images/Kelly_Shane_Resume.pdf" target="_blank">Resume</a> </li>
+						<li> <a href = "contact.html">Contact Information</a> </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<div class = "projects">
+			<h1>Projects</h1>
+			<div class="projectOverlay1">
+				<a><div class="projectContainer1"><p>Arduino-Enabled Dorm Lighting</p></div></a>
+			</div>
+			<div class="projectImage1">
+			</div>
+			<div class="projectOverlay2">
+					<a><div class="projectContainer2"><p>Motor-Driven 3D Printed Mobius Strip</p></div></a>
+			</div>
+			<div class="projectImage2">
+			</div>
+			<div class="projectOverlay3">
+					<a><div class="projectContainer2"><p>Simulation of Magnus Effect on Ping Pong</p></div></a>
+			</div>
+			<div class="projectImage3">
+			</div>
+			<div class="projectOverlay4">
+					<a><div class="projectContainer2"><p>Robotic Paintball Weapon Design</p></div></a>
+			</div>
+			<div class="projectImage4">
+			</div>
+			<script>
+				var image1 = document.querySelector('.projectImage1');
+				var overlay1 = document.querySelector('.projectOverlay1');
+				overlay1.addEventListener('click', function()
+				{
+					image1.classList.toggle('sizeChange');
+					overlay1.classList.toggle('sizeChange');
+				});
+
+				var image2 = document.querySelector('.projectImage2');
+				var overlay2 = document.querySelector('.projectOverlay2');
+				overlay2.addEventListener('click', function()
+				{
+					image2.classList.toggle('sizeChange');
+					overlay2.classList.toggle('sizeChange');
+				});
+
+				var image3 = document.querySelector('.projectImage3');
+				var overlay3 = document.querySelector('.projectOverlay3');
+				overlay3.addEventListener('click', function()
+				{
+					image3.classList.toggle('sizeChange');
+					overlay3.classList.toggle('sizeChange');
+				});
+
+				var image4 = document.querySelector('.projectImage4');
+				var overlay4 = document.querySelector('.projectOverlay4');
+				overlay4.addEventListener('click', function()
+				{
+					image4.classList.toggle('sizeChange');
+					overlay4.classList.toggle('sizeChange');
+				});
+			</script>
+	</body>
+</html>
