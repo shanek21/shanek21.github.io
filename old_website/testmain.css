@@ -92,7 +92,7 @@
 }
 	/*Arduino-Enabled Dorm Lighting*/
 	.projectImage1 {
-		background-image: url("images/LEDs/LEDsArduino.jpg");
+		background-image: url("media/LEDs/LEDsArduino.jpg");
 		/*background-size: 100% 100%;*/
 		background-size: contain;
 	}
@@ -150,7 +150,7 @@
 
 	/*Motor-Driven 3D Printed Mobius Strip*/
 	.projectImage2 {
-		background-image: url("images/3d Printing Research/MobiusApartTop.jpg");
+		background-image: url("media/3d Printing Research/MobiusApartTop.jpg");
 		/*background-size: 100% 100%;*/
 		background-size: contain;
 	}
@@ -209,7 +209,7 @@
 
 	/*Simulation of Magnus Effect on Ping Pong*/
 	.projectImage3 {
-		background-image: url("images/Ping Pong/EffectsOfSpinAndInitialYVelocityOnDeltaX.jpg");
+		background-image: url("media/Ping Pong/EffectsOfSpinAndInitialYVelocityOnDeltaX.jpg");
 		/*background-size: 100% 100%;*/
 		background-size: contain;
 	}
@@ -267,7 +267,7 @@
 
 	/*Robotic Paintball Weapon Design*/
 	.projectImage4 {
-		background-image: url("images/MegaBots/DoubleRevolverFinalRender.jpg");
+		background-image: url("media/MegaBots/DoubleRevolverFinalRender.jpg");
 		/*background-size: 100% 100%;*/
 		background-size: contain;
 	}
